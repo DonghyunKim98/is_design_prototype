@@ -1,0 +1,23 @@
+{
+  "cSpell.words": [
+    "cloudinary",
+    "icomoon",
+    "omnm",
+    "Spoqa",
+    "tailwindcss",
+    "tanstack"
+  ],
+  "css.customData": [".vscode/css_custom_data.json"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#003764",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveBackground": "#575757",
+    "titleBar.inactiveForeground": "#7AFFA0",
+  },
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.validate": ["javascript", "typescript"]
+}
