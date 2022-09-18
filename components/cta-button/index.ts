@@ -1,1 +1,1 @@
-export * from "./cta-button.component";
+export * from './cta-button.component';

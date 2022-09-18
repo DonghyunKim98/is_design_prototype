@@ -1,10 +1,16 @@
-import "../styles/globals.css";
-import "tailwindcss/tailwind.css";
+import '../styles/globals.css';
+import 'tailwindcss/tailwind.css';
 
-import { AppProps } from "next/app";
+import { AppProps } from 'next/app';
+
+import { UIProvider } from '@/provider';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <UIProvider>
+      <Component {...pageProps} />
+    </UIProvider>
+  );
 }
 
 export default MyApp;
