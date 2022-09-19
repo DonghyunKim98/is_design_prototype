@@ -20,7 +20,7 @@ export const LandingChatBubblesModule = () => {
               key={v.timestamp.toString()}
             >
               <Box className="flex-initial p-2 bg-blue-300 rounded-lg">{v.chat}</Box>
-              <Box>{dayjs(v.timestamp).format('LT')}</Box>
+              <Box typography="s1">{dayjs(v.timestamp).format('LT')}</Box>
             </Box>
           );
         })}

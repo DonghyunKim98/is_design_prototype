@@ -1,5 +1,13 @@
 {
-  "cSpell.words": ["cloudinary", "icomoon", "omnm", "Spoqa", "tailwindcss", "tanstack"],
+  "cSpell.words": [
+    "cloudinary",
+    "fontsource",
+    "icomoon",
+    "omnm",
+    "Spoqa",
+    "tailwindcss",
+    "tanstack"
+  ],
   "css.customData": [".vscode/css_custom_data.json"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
