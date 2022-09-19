@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "noImplicitAny": true,    
+    "noImplicitAny": true,
     "baseUrl": ".",
     "paths": {
       "@/provider": ["provider"],
@@ -22,9 +22,9 @@
       "@/components": ["components"],
       "@/components/*": ["components/*"],
       "@/screen": ["screen/"],
-      "@/screen/*": ["screen/*"],
+      "@/screen/*": ["screen/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
 }

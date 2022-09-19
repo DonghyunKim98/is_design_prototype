@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
+    "eslint": "eslint js,ts,tsx",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json}\"",
     "lint": "next lint",
     "lint-fix": "next lint --fix",
-    "eslint": "eslint js,ts,tsx"
+    "start": "next start"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",

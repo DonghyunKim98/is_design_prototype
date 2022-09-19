@@ -1,9 +1,5 @@
-import {
-  createTheme,
-  StyledEngineProvider,
-  ThemeProvider,
-} from "@mui/material/styles";
-import { ReactNode } from "react";
+import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
+import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -11,7 +7,7 @@ type Props = {
 
 const theme = createTheme({
   typography: {
-    fontFamily: ["Spoqa Han Sans Neo"].join(","),
+    fontFamily: ['Spoqa Han Sans Neo'].join(','),
     h1: {
       fontSize: 56,
       fontWeight: 700,
