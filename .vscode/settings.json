@@ -1,15 +1,15 @@
 {
+  "cSpell.words": ["cloudinary", "icomoon", "omnm", "Spoqa", "tailwindcss", "tanstack"],
   "css.customData": [".vscode/css_custom_data.json"],
-  "eslint.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "eslint.enable": true,
   "eslint.validate": ["javascript", "javscriptreact", "typescript", "typescriptreact"],
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#003764",
     "titleBar.activeForeground": "#ffffff",
     "titleBar.inactiveBackground": "#575757",
     "titleBar.inactiveForeground": "#7AFFA0"
-  },
-  "cSpell.words": ["cloudinary", "icomoon", "omnm", "Spoqa", "tailwindcss", "tanstack"]
+  }
 }
