@@ -3,12 +3,14 @@ import 'tailwindcss/tailwind.css';
 
 import { AppProps } from 'next/app';
 
-import { UIProvider } from '@/provider';
+import { LocaleProvider, UIProvider } from '@/provider';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <UIProvider>
-      <Component {...pageProps} />
+      <LocaleProvider>
+        <Component {...pageProps} />
+      </LocaleProvider>
     </UIProvider>
   );
 }
