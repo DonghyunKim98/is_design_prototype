@@ -11,7 +11,7 @@ export const LandingChatBubblesModule = () => {
   const currentUserChat = watch(EChatHost.USER);
 
   return (
-    <Box className="flex flex-col flex-1 gap-4 p-4">
+    <Box className="flex flex-col flex-1 gap-4 p-4 overflow-y-scroll">
       {!isEmpty(currentUserChat) &&
         currentUserChat.map((v) => {
           return (
