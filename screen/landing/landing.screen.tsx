@@ -12,8 +12,8 @@ export const LandingScreen: NextPage = () => {
 
   return (
     <FormProvider {...methods}>
-      <Box className="flex justify-center w-full">
-        <Box className="flex flex-col w-1/2 h-screen bg-gray-200">
+      <Box className="flex items-center justify-center w-screen h-screen gap-4">
+        <Box className="flex flex-col flex-none bg-gray-100 w-96 aspect-5/8">
           <LandingChatBubblesModule />
           <LandingTextFieldModule />
         </Box>

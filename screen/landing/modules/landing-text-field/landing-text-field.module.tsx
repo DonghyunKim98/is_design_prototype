@@ -11,6 +11,11 @@ export const LandingTextFieldModule = memo(() => {
   };
 
   return (
-    <TextField inputRef={inputRef} className="flex-initial w-full" onKeyPress={handlePressEnter} />
+    <TextField
+      placeholder="메세지를 입력해주세요"
+      inputRef={inputRef}
+      className="flex-initial w-full"
+      onKeyPress={handlePressEnter}
+    />
   );
 });
