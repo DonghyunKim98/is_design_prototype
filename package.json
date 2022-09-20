@@ -28,7 +28,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.35.0",
-    "react-icomoon": "^2.5.4"
+    "react-icomoon": "^2.5.4",
+    "rooks": "^7.2.1"
   },
   "devDependencies": {
     "@tailwindcss/forms": "0.5.2",

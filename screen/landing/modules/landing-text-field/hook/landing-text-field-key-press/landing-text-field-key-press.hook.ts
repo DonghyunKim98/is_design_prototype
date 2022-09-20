@@ -1,12 +1,12 @@
 import dayjs from 'dayjs';
-import { isUndefined } from 'lodash';
+import { isNull } from 'lodash';
 import { KeyboardEventHandler, useRef } from 'react';
 import { useFormContext, useController } from 'react-hook-form';
 
 import { Chats, EChatHost } from '../../../../landing.type';
 
 export const useLandingTextFieldKeyPress = () => {
-  const inputRef = useRef();
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const { control } = useFormContext<Chats>();
   const {
     field: { onChange, value: currentUserChat },
@@ -18,8 +18,8 @@ export const useLandingTextFieldKeyPress = () => {
 
       onChange([...currentUserChat, { timestamp: dayjs(), chat: target.value }]);
 
-      if (!isUndefined(inputRef.current)) {
-        const currentInputRef = inputRef.current as HTMLTextAreaElement;
+      if (!isNull(inputRef.current)) {
+        const currentInputRef = inputRef.current;
 
         currentInputRef.value = '';
       }
