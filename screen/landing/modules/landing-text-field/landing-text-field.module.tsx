@@ -14,7 +14,7 @@ export const LandingTextFieldModule = memo(() => {
     <TextField
       placeholder="메세지를 입력해주세요"
       inputRef={inputRef}
-      className="flex-initial w-full"
+      className="flex-initial w-full bg-white"
       onKeyPress={handlePressEnter}
     />
   );

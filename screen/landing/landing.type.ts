@@ -1,16 +1,15 @@
 import { Dayjs } from 'dayjs';
 
-export enum EChatHost {
-  'BOT' = 'BOT',
-  'USER' = 'USER',
-}
+export type ChaTHost = 'BOT' | 'USER';
 
-type Chat = {
+export type Chat = {
+  host: ChaTHost;
   timestamp: Dayjs;
   chat: string;
 };
 
-export type Chats = {
-  [EChatHost.BOT]: Chat[];
-  [EChatHost.USER]: Chat[];
+export type Chats = Chat[];
+
+export type ChatForm = {
+  Chats: Chats;
 };

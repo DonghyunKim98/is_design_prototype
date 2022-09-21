@@ -2,12 +2,12 @@ import { Box } from '@mui/material';
 import { NextPage } from 'next';
 import { FormProvider, useForm } from 'react-hook-form';
 
-import { Chats, EChatHost } from './landing.type';
+import { ChatForm } from './landing.type';
 import { LandingChatBubblesModule, LandingTextFieldModule } from './modules';
 
 export const LandingScreen: NextPage = () => {
-  const methods = useForm<Chats>({
-    defaultValues: { [EChatHost.BOT]: [], [EChatHost.USER]: [] },
+  const methods = useForm<ChatForm>({
+    defaultValues: { Chats: [] },
   });
 
   return (
