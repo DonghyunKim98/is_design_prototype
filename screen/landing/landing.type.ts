@@ -1,11 +1,11 @@
 import { Dayjs } from 'dayjs';
 
-export type ChaTHost = 'BOT' | 'USER';
+export type ChatHost = 'BOT' | 'USER';
 
 export type Chat = {
-  host: ChaTHost;
+  host: ChatHost;
   timestamp: Dayjs;
-  chat: string;
+  message: string;
 };
 
 export type Chats = Chat[];

@@ -18,13 +18,13 @@ export const useLandingTextFieldKeyPress = () => {
 
       const newUserChat: Chat = {
         timestamp: dayjs(),
-        chat: target.value,
+        message: target.value,
         host: 'USER',
       };
 
       const newBotChat: Chat = {
         timestamp: dayjs(),
-        chat: '안녕',
+        message: '안녕',
         host: 'BOT',
       };
 
