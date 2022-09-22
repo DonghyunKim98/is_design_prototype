@@ -8,10 +8,12 @@ import { Chat, ChatForm } from '../../../../landing.type';
 import { sleep } from '@/utils';
 
 export const useLandingTextFieldAddUserChat = () => {
-  const { handleSubmit, formState, reset } = useFormContext<ChatForm>();
+  const { handleSubmit, formState, reset, watch } = useFormContext<ChatForm>();
   const { isSubmitting: isFormSubmitting } = formState;
 
   const setChats = useSetRecoilState($chats);
+
+  console.log(watch('message'));
 
   const addUserChat = async (chatData: ChatForm) => {
     const newUserChat: Chat = {
@@ -27,7 +29,7 @@ export const useLandingTextFieldAddUserChat = () => {
       host: 'BOT',
     };
 
-    sleep(1000);
+    await sleep(1000);
 
     setChats((prev) => [...prev, newUserChat, newBotChat]);
 

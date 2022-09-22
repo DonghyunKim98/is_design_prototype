@@ -7,12 +7,12 @@ export const useLandingTextFieldChangeInput = () => {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const { control } = useFormContext<ChatForm>();
   const {
-    field: { onChange },
-  } = useController({ name: 'Chat', control });
+    field: { onChange, value: currentUserInputChat },
+  } = useController({ name: 'message', control });
 
   const onChangeUserChat = (newChat: string) => {
     onChange(newChat);
   };
 
-  return { inputRef, onChangeUserChat };
+  return { inputRef, onChangeUserChat, currentUserInputChat };
 };

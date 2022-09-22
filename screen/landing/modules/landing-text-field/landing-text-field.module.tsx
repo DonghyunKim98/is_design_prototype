@@ -4,7 +4,7 @@ import { ChangeEvent, KeyboardEventHandler, memo } from 'react';
 import { useLandingTextFieldAddUserChat, useLandingTextFieldChangeInput } from './hook';
 
 export const LandingTextFieldModule = memo(() => {
-  const { onChangeUserChat } = useLandingTextFieldChangeInput();
+  const { onChangeUserChat, currentUserInputChat } = useLandingTextFieldChangeInput();
   const { submitUserChat, isFormSubmitting } = useLandingTextFieldAddUserChat();
 
   const handlePressEnter: KeyboardEventHandler<HTMLDivElement> = (e) => {
@@ -24,6 +24,7 @@ export const LandingTextFieldModule = memo(() => {
       onChange={handleChangeTextField}
       onKeyPress={handlePressEnter}
       disabled={isFormSubmitting}
+      value={currentUserInputChat}
     />
   );
 });
