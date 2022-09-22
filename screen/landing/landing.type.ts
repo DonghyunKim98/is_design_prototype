@@ -7,6 +7,7 @@ export type Chat = {
   timestamp: Dayjs;
   message: string;
   buttons?: string[];
+  loading?: boolean;
 };
 
 export type ChatForm = {

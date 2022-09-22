@@ -5,7 +5,7 @@ import { useLandingTextFieldAddUserChat, useLandingTextFieldChangeInput } from '
 
 export const LandingTextFieldModule = memo(() => {
   const { onChangeUserChat, currentUserInputChat } = useLandingTextFieldChangeInput();
-  const { submitUserChat, isFormSubmitting } = useLandingTextFieldAddUserChat();
+  const { submitUserChat, isWaitingBotResponse } = useLandingTextFieldAddUserChat();
 
   const handlePressEnter: KeyboardEventHandler<HTMLDivElement> = (e) => {
     if (e.key === 'Enter') {
@@ -23,7 +23,7 @@ export const LandingTextFieldModule = memo(() => {
       className="flex-initial w-full bg-white"
       onChange={handleChangeTextField}
       onKeyPress={handlePressEnter}
-      disabled={isFormSubmitting}
+      disabled={isWaitingBotResponse}
       value={currentUserInputChat ?? ''}
     />
   );

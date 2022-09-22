@@ -1,15 +1,17 @@
 import dayjs from 'dayjs';
 import { useFormContext } from 'react-hook-form';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import { $chats } from '../../../../landing.state';
 import { Chat, ChatForm } from '../../../../landing.type';
 
-import { sleep } from '@/utils';
-
 export const useLandingTextFieldAddUserChat = () => {
-  const { handleSubmit, formState, reset } = useFormContext<ChatForm>();
-  const { isSubmitting: isFormSubmitting } = formState;
+  const { handleSubmit, reset } = useFormContext<ChatForm>();
+
+  const currentChats = useRecoilValue($chats);
+  const lastChat = currentChats[currentChats.length - 1];
+
+  const isWaitingBotResponse = lastChat?.host === 'BOT' && lastChat?.loading;
 
   const setChats = useSetRecoilState($chats);
 
@@ -20,8 +22,6 @@ export const useLandingTextFieldAddUserChat = () => {
       host: 'USER',
     };
 
-    await sleep(1000);
-
     setChats((prev) => [...prev, newUserChat]);
 
     reset();
@@ -31,5 +31,5 @@ export const useLandingTextFieldAddUserChat = () => {
     await handleSubmit(addUserChat)();
   };
 
-  return { submitUserChat, isFormSubmitting };
+  return { submitUserChat, isWaitingBotResponse };
 };

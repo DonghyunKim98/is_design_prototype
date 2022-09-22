@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material';
+import { Box, Button, CircularProgress } from '@mui/material';
 import dayjs from 'dayjs';
 import { isUndefined } from 'lodash';
 import Image from 'next/image';
@@ -14,7 +14,7 @@ type ChatBubbleComponentProps = {
 };
 
 export const LandingChatBubblesChatBubbleComponent = memo<ChatBubbleComponentProps>(
-  ({ chat: { message, host, timestamp, buttons }, onPressBotButton }) => {
+  ({ chat: { message, host, timestamp, buttons, loading }, onPressBotButton }) => {
     if (host === 'BOT') {
       return (
         <Box
@@ -22,25 +22,38 @@ export const LandingChatBubblesChatBubbleComponent = memo<ChatBubbleComponentPro
           key={timestamp.toString()}
         >
           <Box className="flex flex-col items-start gap-2">
-            <Image src={BotLogo} width="80" height="50" placeholder="blur" />
+            <Box className="flex items-center gap-2">
+              <Image src={BotLogo} width="80" height="50" placeholder="blur" />
+              <Box component="span" typography="h7">
+                통합 챗봇
+              </Box>
+            </Box>
             <Box className="flex flex-col flex-initial gap-2 p-2 bg-white rounded-lg min-w-2">
-              {message}
-              {!isUndefined(buttons) && (
-                <Box className="flex flex-wrap justify-between gap-2">
-                  {buttons.map((v) => {
-                    return (
-                      <Button
-                        onClick={() => onPressBotButton(v)}
-                        variant="contained"
-                        key={v}
-                        className="w-[47.5%]"
-                        sx={{ typography: 'subtitle2' }}
-                      >
-                        {v}
-                      </Button>
-                    );
-                  })}
+              {loading ? (
+                <Box className="flex items-center justify-center w-40">
+                  <CircularProgress size={15} />
                 </Box>
+              ) : (
+                <>
+                  {message}
+                  {!isUndefined(buttons) && (
+                    <Box className="flex flex-wrap justify-between gap-2">
+                      {buttons.map((v) => {
+                        return (
+                          <Button
+                            onClick={() => onPressBotButton(v)}
+                            variant="contained"
+                            key={v}
+                            className="w-[47.5%]"
+                            sx={{ typography: 'subtitle2' }}
+                          >
+                            {v}
+                          </Button>
+                        );
+                      })}
+                    </Box>
+                  )}
+                </>
               )}
             </Box>
           </Box>
