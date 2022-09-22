@@ -26,7 +26,7 @@ export const LandingChatBubblesModule = () => {
       ...prev,
       {
         host: 'USER',
-        message: '챗봇선택: ' + botMessage,
+        message: botMessage,
         timestamp: dayjs(),
       },
     ]);

@@ -6,13 +6,11 @@ import { $chats } from '../../landing.state';
 import { Chat } from '../../landing.type';
 
 import botResponseJSONData from './bot_response.json';
+import { BotResponseMappedJSONData } from './landing-add-bot-response.type';
 
-const botResponseMappedJSONData = JSON.parse(JSON.stringify(botResponseJSONData)) as {
-  [key: string]: {
-    name: string;
-    [key2: string]: string;
-  };
-};
+const botResponseMappedJSONData = JSON.parse(
+  JSON.stringify(botResponseJSONData)
+) as BotResponseMappedJSONData;
 
 /**
  * Controller 만 담당하는 Module
@@ -35,10 +33,12 @@ export const LandingAddBotResponseModule = () => {
     const userMessage = lastChat.message;
 
     let botMessage = '답변을 준비하지 못했습니다.\n궁금한 사항을 다시 입력해주세요.';
+    let botButtons = undefined;
 
     for (const property in botResponseMappedJSONData) {
       if (property === userMessage) {
-        botMessage = botResponseMappedJSONData[property].name;
+        botMessage = botResponseMappedJSONData[property].name.message;
+        botButtons = botResponseMappedJSONData[property].name.buttons;
         break;
       }
     }
@@ -48,6 +48,7 @@ export const LandingAddBotResponseModule = () => {
       message: botMessage,
       host: 'BOT',
       loading: true,
+      buttons: botButtons,
     };
 
     setCurrentChats((prev) => [...prev, newBotChat]);

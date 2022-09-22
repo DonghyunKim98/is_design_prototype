@@ -18,7 +18,7 @@ export const LandingChatBubblesChatBubbleComponent = memo<ChatBubbleComponentPro
     if (host === 'BOT') {
       return (
         <Box
-          className="flex flex-col items-start flex-initial gap-1 max-w-[70%]"
+          className="flex flex-col items-start flex-initial gap-1 max-w-[85%]"
           key={timestamp.toString()}
         >
           <Box className="flex flex-col items-start gap-2">
@@ -35,7 +35,10 @@ export const LandingChatBubblesChatBubbleComponent = memo<ChatBubbleComponentPro
                 </Box>
               ) : (
                 <>
-                  {message}
+                  <span
+                    style={{ wordBreak: 'keep-all' }}
+                    dangerouslySetInnerHTML={{ __html: message }}
+                  />
                   {!isUndefined(buttons) && (
                     <Box className="flex flex-wrap justify-between gap-2">
                       {buttons.map((v) => {
