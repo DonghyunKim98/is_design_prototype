@@ -29,6 +29,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.35.0",
     "react-icomoon": "^2.5.4",
+    "recoil": "^0.7.5",
     "rooks": "^7.2.1"
   },
   "devDependencies": {

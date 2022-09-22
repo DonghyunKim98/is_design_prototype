@@ -1,21 +1,29 @@
 import { TextField } from '@mui/material';
-import { KeyboardEventHandler, memo } from 'react';
+import { ChangeEvent, KeyboardEventHandler, memo } from 'react';
 
-import { useLandingTextFieldKeyPress } from './hook';
+import { useLandingTextFieldAddUserChat, useLandingTextFieldChangeInput } from './hook';
 
 export const LandingTextFieldModule = memo(() => {
-  const { inputRef, addUserChat } = useLandingTextFieldKeyPress();
+  const { onChangeUserChat } = useLandingTextFieldChangeInput();
+  const { submitUserChat, isFormSubmitting } = useLandingTextFieldAddUserChat();
 
   const handlePressEnter: KeyboardEventHandler<HTMLDivElement> = (e) => {
-    addUserChat(e);
+    if (e.key === 'Enter') {
+      submitUserChat();
+    }
+  };
+
+  const handleChangeTextField = (event: ChangeEvent<HTMLInputElement>) => {
+    onChangeUserChat(event.target.value);
   };
 
   return (
     <TextField
       placeholder="메세지를 입력해주세요"
-      inputRef={inputRef}
       className="flex-initial w-full bg-white"
+      onChange={handleChangeTextField}
       onKeyPress={handlePressEnter}
+      disabled={isFormSubmitting}
     />
   );
 });

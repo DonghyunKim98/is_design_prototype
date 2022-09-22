@@ -1,18 +1,17 @@
 import { Box } from '@mui/material';
 import { isEmpty, isNull } from 'lodash';
 import { useRef } from 'react';
-import { useFormContext } from 'react-hook-form';
+import { useRecoilValue } from 'recoil';
 import { useDidUpdate } from 'rooks';
 
-import { ChatForm } from '../../landing.type';
+import { $chats } from '../../landing.state';
 
 import { LandingChatBubblesChatBubbleComponent } from './components';
 
 export const LandingChatBubblesModule = () => {
-  const bubbleRef = useRef<HTMLUListElement>(null);
-  const { watch } = useFormContext<ChatForm>();
+  const currentChats = useRecoilValue($chats);
 
-  const currentChats = watch('Chats');
+  const bubbleRef = useRef<HTMLUListElement>(null);
 
   useDidUpdate(() => {
     if (!isNull(bubbleRef.current)) {

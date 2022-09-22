@@ -22,7 +22,9 @@
       "@/components": ["components"],
       "@/components/*": ["components/*"],
       "@/screen": ["screen/"],
-      "@/screen/*": ["screen/*"]
+      "@/screen/*": ["screen/*"],
+      "@/utils": ["utils/"],
+      "@/utils/*": ["utils/*"]
     }
   },
   "exclude": ["node_modules"],

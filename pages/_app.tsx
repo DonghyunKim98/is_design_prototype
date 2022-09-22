@@ -6,16 +6,19 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import { AppProps } from 'next/app';
+import { RecoilRoot } from 'recoil';
 
 import { LocaleProvider, UIProvider } from '@/provider';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <UIProvider>
-      <LocaleProvider>
-        <Component {...pageProps} />
-      </LocaleProvider>
-    </UIProvider>
+    <RecoilRoot>
+      <UIProvider>
+        <LocaleProvider>
+          <Component {...pageProps} />
+        </LocaleProvider>
+      </UIProvider>
+    </RecoilRoot>
   );
 }
 

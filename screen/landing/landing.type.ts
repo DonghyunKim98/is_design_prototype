@@ -8,8 +8,6 @@ export type Chat = {
   message: string;
 };
 
-export type Chats = Chat[];
-
 export type ChatForm = {
-  Chats: Chats;
+  message: string;
 };

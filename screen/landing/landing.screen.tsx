@@ -7,7 +7,7 @@ import { LandingChatBubblesModule, LandingTextFieldModule } from './modules';
 
 export const LandingScreen: NextPage = () => {
   const methods = useForm<ChatForm>({
-    defaultValues: { Chats: [] },
+    defaultValues: undefined,
   });
 
   return (
