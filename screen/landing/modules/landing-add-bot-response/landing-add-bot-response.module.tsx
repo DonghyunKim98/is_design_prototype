@@ -5,6 +5,15 @@ import { useDidUpdate, useTimeoutWhen } from 'rooks';
 import { $chats } from '../../landing.state';
 import { Chat } from '../../landing.type';
 
+import botResponseJSONData from './bot_response.json';
+
+const botResponseMappedJSONData = JSON.parse(JSON.stringify(botResponseJSONData)) as {
+  [key: string]: {
+    name: string;
+    [key2: string]: string;
+  };
+};
+
 /**
  * Controller 만 담당하는 Module
  * No View
@@ -23,9 +32,20 @@ export const LandingAddBotResponseModule = () => {
       return;
     }
 
+    const userMessage = lastChat.message;
+
+    let botMessage = '답변을 준비하지 못했습니다.\n궁금한 사항을 다시 입력해주세요.';
+
+    for (const property in botResponseMappedJSONData) {
+      if (property === userMessage) {
+        botMessage = botResponseMappedJSONData[property].name;
+        break;
+      }
+    }
+
     const newBotChat: Chat = {
       timestamp: dayjs(),
-      message: '내가 최고입니다.',
+      message: botMessage,
       host: 'BOT',
       loading: true,
     };
