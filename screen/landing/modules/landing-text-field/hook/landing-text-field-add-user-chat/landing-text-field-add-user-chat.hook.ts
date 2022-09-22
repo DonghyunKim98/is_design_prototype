@@ -8,12 +8,10 @@ import { Chat, ChatForm } from '../../../../landing.type';
 import { sleep } from '@/utils';
 
 export const useLandingTextFieldAddUserChat = () => {
-  const { handleSubmit, formState, reset, watch } = useFormContext<ChatForm>();
+  const { handleSubmit, formState, reset } = useFormContext<ChatForm>();
   const { isSubmitting: isFormSubmitting } = formState;
 
   const setChats = useSetRecoilState($chats);
-
-  console.log(watch('message'));
 
   const addUserChat = async (chatData: ChatForm) => {
     const newUserChat: Chat = {
@@ -24,8 +22,7 @@ export const useLandingTextFieldAddUserChat = () => {
 
     const newBotChat: Chat = {
       timestamp: dayjs(),
-      message:
-        'ㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎ',
+      message: '내가 최고입니다.',
       host: 'BOT',
     };
 
@@ -33,9 +30,7 @@ export const useLandingTextFieldAddUserChat = () => {
 
     setChats((prev) => [...prev, newUserChat, newBotChat]);
 
-    reset(undefined, {
-      keepValues: false,
-    });
+    reset();
   };
 
   const submitUserChat = async () => {

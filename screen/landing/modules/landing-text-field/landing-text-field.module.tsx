@@ -24,7 +24,7 @@ export const LandingTextFieldModule = memo(() => {
       onChange={handleChangeTextField}
       onKeyPress={handlePressEnter}
       disabled={isFormSubmitting}
-      value={currentUserInputChat}
+      value={currentUserInputChat ?? ''}
     />
   );
 });
