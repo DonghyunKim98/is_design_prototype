@@ -24,7 +24,8 @@ export const useLandingTextFieldKeyPress = () => {
 
       const newBotChat: Chat = {
         timestamp: dayjs(),
-        message: '안녕',
+        message:
+          'ㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎ',
         host: 'BOT',
       };
 

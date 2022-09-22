@@ -1,3 +1,4 @@
+const rem0_10 = { ...Array.from(Array(11)).map((_, i) => `${i}rem`) };
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -15,6 +16,7 @@ module.exports = {
       aspectRatio: {
         '5/8': '5 / 8',
       },
+      minWidth: rem0_10,
     },
   },
 };
