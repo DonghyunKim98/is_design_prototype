@@ -20,15 +20,9 @@ export const useLandingTextFieldAddUserChat = () => {
       host: 'USER',
     };
 
-    const newBotChat: Chat = {
-      timestamp: dayjs(),
-      message: '내가 최고입니다.',
-      host: 'BOT',
-    };
-
     await sleep(1000);
 
-    setChats((prev) => [...prev, newUserChat, newBotChat]);
+    setChats((prev) => [...prev, newUserChat]);
 
     reset();
   };

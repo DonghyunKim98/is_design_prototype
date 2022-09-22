@@ -6,6 +6,7 @@ export type Chat = {
   host: ChatHost;
   timestamp: Dayjs;
   message: string;
+  buttons?: string[];
 };
 
 export type ChatForm = {
