@@ -25,9 +25,9 @@ export const LandingChatBubblesChatBubbleComponent = memo<ChatBubbleComponentPro
             <Image src={BotLogo} width="80" height="50" placeholder="blur" />
             <Box className="flex flex-col flex-initial gap-2 p-2 bg-white rounded-lg min-w-2">
               {message}
-              <Box className="flex flex-wrap justify-between gap-2">
-                {!isUndefined(buttons) &&
-                  buttons.map((v) => {
+              {!isUndefined(buttons) && (
+                <Box className="flex flex-wrap justify-between gap-2">
+                  {buttons.map((v) => {
                     return (
                       <Button
                         onClick={() => onPressBotButton(v)}
@@ -40,7 +40,8 @@ export const LandingChatBubblesChatBubbleComponent = memo<ChatBubbleComponentPro
                       </Button>
                     );
                   })}
-              </Box>
+                </Box>
+              )}
             </Box>
           </Box>
           <Box typography="caption">{dayjs(timestamp).format('LT')}</Box>

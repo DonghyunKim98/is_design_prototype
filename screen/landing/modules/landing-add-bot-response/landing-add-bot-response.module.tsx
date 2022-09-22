@@ -22,7 +22,7 @@ export const LandingAddBotResponseModule = () => {
 
     const newBotChat: Chat = {
       timestamp: dayjs(),
-      message: '내가 최고입니다.',
+      message: '내가 최고입니다.ㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎ',
       host: 'BOT',
     };
 
