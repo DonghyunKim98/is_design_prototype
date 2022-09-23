@@ -14,7 +14,7 @@ module.exports = {
   theme: {
     extend: {
       aspectRatio: {
-        '5/8': '5 / 8',
+        '5/9': '5 / 9',
       },
       minWidth: rem0_10,
     },

@@ -29,7 +29,7 @@ export const LandingScreen: NextPage = () => {
   return (
     <FormProvider {...methods}>
       <Box className="flex items-center justify-center w-screen h-screen gap-4">
-        <Box className="flex flex-col flex-none bg-gray-100 w-96 aspect-5/8">
+        <Box className="flex flex-col flex-none bg-gray-100 w-96 aspect-5/9">
           <LandingChatHeaderModule />
           <LandingChatBubblesModule />
           <LandingTextFieldModule />

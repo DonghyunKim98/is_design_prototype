@@ -1,5 +1,7 @@
 import { BotResponseMappedJSONData } from './landing-add-bot-response.type';
 
+import { replaceAllSpaceAndSpecialSymbol } from '@/utils';
+
 type GetBotResponseAndButtons = (
   botResponseMappedJSONData: BotResponseMappedJSONData,
   userMessage: string
@@ -16,13 +18,13 @@ export const getBotResponseAndButtons: GetBotResponseAndButtons = (
   let botButtons = undefined;
 
   for (const childBot in botResponseMappedJSONData) {
-    if (childBot === userMessage) {
+    if (childBot === replaceAllSpaceAndSpecialSymbol(userMessage)) {
       botMessage = botResponseMappedJSONData[childBot].name.message;
       botButtons = botResponseMappedJSONData[childBot].name.buttons;
       break;
     }
     for (const keyword in botResponseMappedJSONData[childBot]) {
-      if (keyword === userMessage) {
+      if (keyword === replaceAllSpaceAndSpecialSymbol(userMessage)) {
         botMessage = botResponseMappedJSONData[childBot][keyword].message;
         botButtons = botResponseMappedJSONData[childBot][keyword].buttons;
       }
