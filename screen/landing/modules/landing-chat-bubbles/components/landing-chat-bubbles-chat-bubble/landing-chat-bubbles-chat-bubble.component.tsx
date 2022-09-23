@@ -28,7 +28,7 @@ export const LandingChatBubblesChatBubbleComponent = memo<ChatBubbleComponentPro
                 통합 챗봇
               </Box>
             </Box>
-            <Box className="flex flex-col flex-initial gap-2 p-2 bg-white rounded-lg min-w-2">
+            <Box className="flex flex-col flex-initial gap-2 p-4 bg-white rounded-lg min-w-2">
               {loading ? (
                 <Box className="flex items-center justify-center w-40">
                   <CircularProgress size={15} />
@@ -49,6 +49,7 @@ export const LandingChatBubblesChatBubbleComponent = memo<ChatBubbleComponentPro
                             key={v}
                             className="w-[47.5%]"
                             sx={{ typography: 'subtitle2' }}
+                            style={{ wordBreak: 'keep-all' }}
                           >
                             {v}
                           </Button>
