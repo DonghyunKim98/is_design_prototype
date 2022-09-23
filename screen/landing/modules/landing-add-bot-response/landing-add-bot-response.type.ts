@@ -7,6 +7,9 @@ type BotName = {
 
 export type BotResponseMappedJSONData = {
   [key: string]: BotName & {
-    [key2: string]: string;
+    [key2: string]: {
+      message: string;
+      buttons?: string[];
+    };
   };
 };

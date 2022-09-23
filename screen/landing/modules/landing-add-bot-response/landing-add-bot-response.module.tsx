@@ -6,6 +6,7 @@ import { $chats } from '../../landing.state';
 import { Chat } from '../../landing.type';
 
 import botResponseJSONData from './bot_response.json';
+import { getBotResponseAndButtons } from './landing-add-bot-response.method';
 import { BotResponseMappedJSONData } from './landing-add-bot-response.type';
 
 const botResponseMappedJSONData = JSON.parse(
@@ -32,16 +33,10 @@ export const LandingAddBotResponseModule = () => {
 
     const userMessage = lastChat.message;
 
-    let botMessage = '답변을 준비하지 못했습니다.\n궁금한 사항을 다시 입력해주세요.';
-    let botButtons = undefined;
-
-    for (const property in botResponseMappedJSONData) {
-      if (property === userMessage) {
-        botMessage = botResponseMappedJSONData[property].name.message;
-        botButtons = botResponseMappedJSONData[property].name.buttons;
-        break;
-      }
-    }
+    const { botMessage, botButtons } = getBotResponseAndButtons(
+      botResponseMappedJSONData,
+      userMessage
+    );
 
     const newBotChat: Chat = {
       timestamp: dayjs(),
