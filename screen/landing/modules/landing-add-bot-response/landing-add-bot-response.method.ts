@@ -25,7 +25,10 @@ export const getBotResponseAndButtons: GetBotResponseAndButtons = (
     }
     for (const keyword in botResponseMappedJSONData[childBot]) {
       if (keyword === replaceAllSpaceAndSpecialSymbol(userMessage)) {
-        botMessage = botResponseMappedJSONData[childBot][keyword].message;
+        botMessage = `${botResponseMappedJSONData[childBot].name.message}
+          
+          <hr/>
+          ${botResponseMappedJSONData[childBot][keyword].message}`;
         botButtons = botResponseMappedJSONData[childBot][keyword].buttons;
       }
     }
