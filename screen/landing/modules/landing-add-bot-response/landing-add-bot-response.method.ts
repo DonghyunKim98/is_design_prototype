@@ -29,7 +29,7 @@ export const getBotResponseAndButtons: GetBotResponseAndButtons = (
           
           <hr/>
           ${botResponseMappedJSONData[childBot][keyword].message}`;
-        botButtons = botResponseMappedJSONData[childBot][keyword].buttons;
+        botButtons = ['👍', '👎'];
       }
     }
   }

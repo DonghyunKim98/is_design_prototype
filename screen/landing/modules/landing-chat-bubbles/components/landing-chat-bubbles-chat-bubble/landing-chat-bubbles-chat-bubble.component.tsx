@@ -42,10 +42,18 @@ export const LandingChatBubblesChatBubbleComponent = memo<ChatBubbleComponentPro
                   {!isUndefined(buttons) && (
                     <Box className="flex flex-wrap justify-between gap-2">
                       {buttons.map((v) => {
+                        const isSatisfactionSurveyButton = ['👍', '👎'].includes(v);
+                        const handlePressBotButton = () => {
+                          if (isSatisfactionSurveyButton) {
+                            return;
+                          }
+                          onPressBotButton(v);
+                        };
+
                         return (
                           <Button
-                            onClick={() => onPressBotButton(v)}
-                            variant="contained"
+                            onClick={handlePressBotButton}
+                            variant={isSatisfactionSurveyButton ? 'outlined' : 'contained'}
                             key={v}
                             className="w-[47.5%]"
                             sx={{ typography: 'subtitle2' }}
