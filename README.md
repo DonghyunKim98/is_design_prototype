@@ -27,7 +27,26 @@
 
 > 기능 요구사항 관련, 자세한 결과물은 실제 프로토타입을 참고
 
-
 - 성능 요구사항 (Performance Requirements)
-  - **PER-3 쳇봇 응답 시간**
-  - **PER-5 웹페이지 디스플레이 시간**
+
+|No.|`PER-5 웹 페이지 디스플레이 시간`|
+|---|:--------------------------:|
+|_요구사항_|정보시스템의 웹페이지는 사용자가 요청한 시간으로부터 3초 내에 완전히 디스플레이되어야함|
+|_결과물_|구글 라이트하우스 이용<br><br><img src="https://user-images.githubusercontent.com/60422588/192178773-8b321f27-66f9-4741-9f49-2273ca4bc411.png" width=700 height=500/><br><br> 최악의 경우에도 Full Load 에 2.4초가 걸림<br>프로토타입은 무료 서버 도메인을 삼는 것을 감안한다면, 실제 결과물은 더 높은 성능을 기록할 수 있음|
+
+- 인터페이스 요구사항 (Interface Requirements)
+
+|No.|`SIR-4 사용 단말을 고려한 화면 사이즈`|
+|---|:--------------------------:|
+|_요구사항_|반응형 웹 구축|
+|_결과물 ① Mobile_|<img src="https://user-images.githubusercontent.com/60422588/192179235-1999782f-331c-4a18-a4a8-f27048cc7615.png" width=300 height=600/>|
+|_결과물 ② Tablet_|<img src="https://user-images.githubusercontent.com/60422588/192179237-c75f2236-5776-4428-9496-20051627eae6.png" width=400/>|
+|_결과물 ③ Desktop_|<img src="https://user-images.githubusercontent.com/60422588/192179230-ea698dd0-6df8-4981-8661-560cbcdf3973.png" width=500/>|
+
+
+----------
+### Tech Stack
+- Typescript
+- React, Next.js
+- Recoil, React Hook Form
+- TailwindCSS
