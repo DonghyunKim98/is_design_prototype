@@ -28,5 +28,7 @@ a {
   body {
     color: white;
     background: black;
+    overflow: hidden;
+    touch-action: none;
   }
 }
